@@ -32,4 +32,39 @@
 </body>
 </html>
 
+:root {
+    --color-primary: #8DAA91;      /* Sage Green */
+    --color-background: #FBFAF8;   /* Pearl White */
+    --color-text: #2D3436;         /* Deep Charcoal */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-md);
+}
+
+/* Scanning Animation */
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
+
+// Example: Analysis Logic
+const generateDetailedAnalysis = () => {
+    const types = [
+        {
+            type: "Dry / Dehydrated",
+            summary: "Your skin shows significant dehydration...",
+            scores: { hydration: 34, texture: 72, clarity: 88 }
+        },
+        // ... more skin profiles
+    ];
+    return types[Math.floor(Math.random() * types.length)];
+};
+
+
 it is app which scan the face , tries to know problems , deliver proper solution , suggest consultation 
